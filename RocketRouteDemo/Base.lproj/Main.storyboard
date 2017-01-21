@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RocketRouteDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YR3-gu-izQ"/>
+                            <searchBar contentMode="redraw" placeholder="ICAO code of an Airport" translatesAutoresizingMaskIntoConstraints="NO" id="RJm-Gs-tEc">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="SQo-KW-9mY"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="eIm-sf-fLA"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RJm-Gs-tEc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="4pj-Hh-5bR"/>
+                            <constraint firstAttribute="trailing" secondItem="YR3-gu-izQ" secondAttribute="trailing" id="EKd-Pg-5BV"/>
+                            <constraint firstAttribute="trailing" secondItem="RJm-Gs-tEc" secondAttribute="trailing" id="Eyd-XT-TPE"/>
+                            <constraint firstItem="YR3-gu-izQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cUP-TJ-naf"/>
+                            <constraint firstItem="YR3-gu-izQ" firstAttribute="top" secondItem="RJm-Gs-tEc" secondAttribute="bottom" id="cvK-Ke-oMF"/>
+                            <constraint firstItem="RJm-Gs-tEc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gON-kq-JZ1"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YR3-gu-izQ" secondAttribute="bottom" id="rUb-Do-lD5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="YR3-gu-izQ" id="20p-BB-6Fe"/>
+                        <outlet property="searchBar" destination="RJm-Gs-tEc" id="Ya6-Qc-xy3"/>
+                        <outlet property="searchDisplayController" destination="nwU-1S-mWC" id="npo-SA-PBR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="nwU-1S-mWC">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="dDG-X9-FxS"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="rBp-FT-RYK"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="YdV-y0-TQp"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="QWP-DF-90S"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+</document>
